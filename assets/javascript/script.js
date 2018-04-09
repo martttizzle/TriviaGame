@@ -6,7 +6,13 @@ $(document).ready(function () {
     var opt3 = $("#ans3");
     var opt4 = $("#ans4");
     var qcnt = 0;
+    var intervalID;
 
+    $(document).on('click', function() {
+        start(qcnt);
+        alert(qcnt);
+    });
+   //intervalID = setInterval(start(i), 1000);
     function start(i) {
         let quest = question[i].q1;
         let ans1 = question[i].a;
@@ -19,54 +25,23 @@ $(document).ready(function () {
         opt2.html("<p>B." + "  " + ans2 + "</p>");
         opt3.html("<p>C." + "  " + ans3 + "</p>");
         opt4.html("<p>D." + "  " + ans4 + "</p>");
-        qcnt++
-        gameOver(qcnt);
+        qcnt++; 
     }
-
 //Selecting the answer
-$("#ans1, #ans2, #ans3, #ans4").on("click", function() {
-    var a = $(this);
-    alert(a);
-    console.log(a);
-     if(a == "p#ans1") {
-         alert("correct match");
-     }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $("#tst").on("click", function () {
+ $("#ans1, #ans2, #ans3, #ans4").on("click", function() {
+    let userPick = $(this).attr("id");
+    let a = question[qcnt].answer; 
+    if(userPick == a)  {
+        alert("correct");
         start(qcnt);
-    });
-
-    function gameOver(qcnt) {
-        
-        if (qcnt > 8) {
-            alert('over');
-        }
     }
+});
+ 
+
+//  $("#tst").on("click", function () {
+//      start(qcnt);
+//  });
+
 
 
 });
