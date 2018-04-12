@@ -4,8 +4,11 @@ $(document).ready(function () {
     //$("#pic1").append('<img id="yes" src="assets/images/star-wars.jpg">')
     // $("#yes").fadeOut();
     
-    $("div.yes").on("click", function() {
-        $(this).fadeOut(5000);
+    $("body").on("click", function() { 
+        console.log("bodyclicked");
+        $("img").fadeOut("slow", function () {
+
+        });
     });
     
     var qDiv = $("#questionBox");
@@ -13,12 +16,11 @@ $(document).ready(function () {
     var opt2 = $("#ans2");
     var opt3 = $("#ans3");
     var opt4 = $("#ans4");
-    var qcnt = 0;
+    var qcnt = 1;
     var intervalID;
     
-    $(document).on('click', function() {
-        $("div.yes").fadeOut();
-        });
+    start(qcnt);
+
         function start(i) {
             let quest = question[i].q1;
             let ans1 = question[i].a;
@@ -44,26 +46,6 @@ $(document).ready(function () {
         });
         
         
-        //  $("#tst").on("click", function () {
-            //           $("#tst").append('<p id="yes">OK </p>');
-            
-            //         });
-            
-            // var testCounter = 0;
-            // function test() {
-                //       testCounter += 1;
-                //     console.log ("test " + testCounter);
-                
-                // }
-                
-                //setInterval(test, 1000);
-                
-                //intervalID = setInterval(start(i), 1000);
-                
-                
-                
-                // $("#body").toggle();
-                
                 
                 
                 
