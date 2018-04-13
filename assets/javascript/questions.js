@@ -1,4 +1,4 @@
-var question = [{},{
+var question = [{
     q1: "Who is Luke Skywalker's biological father?",
     a: "Darth Maul",
     b: "Darth Vader",
@@ -72,3 +72,4 @@ var question = [{},{
     d: "Manhattan"
 }
 ];
+

@@ -4,15 +4,23 @@
 }
 
 #yes {
-    /*("../images/star-wars.jpg");*/
+
+   width: 100%;
+   height: 100vh;
+   margin: 0px;
+}
+#pic {
+
    width: 100px;
    height: 100px;
    margin: 0px;
-   z-index: 99;
 }
 
 #body {
-    background-color: red;
+    background-image:  url("../images/starsbackground.jpg");
+    border: solid 2px black;
+    position: relative;
+    z-index: 90;
     
 }
 /* #pic1 {
@@ -23,3 +31,12 @@
     margin: 0px;
     z-index: 99
 } */
+
+div.row {
+    text-align: center;
+}
+
+div.container {
+    color: rgb(194, 13, 13);
+
+}
