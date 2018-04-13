@@ -23,53 +23,59 @@ var question = [{
     answer: "ans1"
 },
 {
-    q1: "What iadfasdf",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "Han Solo's trusty blaster is named:",
+    a: "Solo-6466",
+    b: "DL-44",
+    c: "laser-beam6",
+    d: "LP0-1250",
+    answer:"ans2"
 },
 {
-    q1: "What is the capadsfasdfa",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "How many parsecs did the Millennium Falcon make the Kessel Run in?",
+    a: "Less than 12 parsecs",
+    b: "Less than 10 parsecs",
+    c: "Less than 20 parsecs",
+    d: "It was measured in Kessels",
+    answer: "ans1"
 },
 {
-    q1: "What adfasdfasork?",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "What is the name of Luke Skywalkers X-wing?",
+    a: "Read Leader",
+    b: "Red 2",
+    c: "Red 5",
+    d: "Red 0",
+    answer: "ans3"
 },
 {
-    q1: "What is tadfasdfasfsdf rk?",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "You may know them by AT-AT, but what does it stand for?",
+    a: "All Terrain Armored Transport",
+    b: "All Terrain Assualt Transport",
+    c: "All Terrain Attack Transport",
+    d: "All Tactical Armored Tank",
+    answer: "ans1"
 },
 {
-    q1: "Whafdasdf asdsa",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "What part of the second Death Star was targeted by Lando and Wedge in order to destroy it entirely?",
+    a: "Electromatic Shield-capacitor",
+    b: "Thermal II exhaust port",
+    c: "Hypermatter Core",
+    d: "Sheild Generator",
+    answer:"ans3"
 }, 
 {
-    q1: "What is the capital of New York?",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
-}, 
-{
-    q1: "Whataadfadsf ads asdfasdfrk?",
-    a: "Albany",
-    b: "New York City",
-    c: "Long Island",
-    d: "Manhattan"
+    q1: "Which Imperial Admiral did Vader force-choke for coming out of the hyperspace too close to Hoth, and alerting the Rebels?",
+    a: "Admiral Ozzel",
+    b: "Admiral Needa",
+    c: "Admiral Veers",
+    d: "Admiral Piett",
+    answer: "ans1"
+
+},{ q1: "In what \"Detention Block\" was Princess Leia being held on the first Death Star?,",
+    a: "AA-23",
+    b: "AA-24",
+    c: "C-block 2138",
+    d: "C-block 2343",
+    answer:"ans1"
 }
 ];
 

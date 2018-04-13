@@ -6,36 +6,39 @@ $(document).ready(function () {
     var opt4 = $("#ans4");
     var qcnt = 0;
     var intervalID;
-    //image array
-    var questionImages= ["","","","","","","","","",];
-    var vader = 'src="assets/images/vader.jpg"';
-    
-   // $(".ok").append('<img id="yes" src="assets/images/star-wars.jpg">')
-   $(".container").hide();
-   $("#yes").on("click",function() {
-       $(this).fadeOut(1000);
-       $(".container").show(); 
-    });
-    
-    
+    var vader = '<img id="pic" src="assets/images/vader.gif">';
+    var leiaOrgana = '<img id="pic" src="assets/images/leiaOrgana.gif">';
+    var slave1 = '<img id="pic" src="assets/images/slave1.gif">';
+    var DL44 = '<img id="pic" src="assets/images/DL-44.gif">';
+    var Kessel = '<img id="pic" src="assets/images/kessels.gif">';
+    var Red5 = '<img id="pic" src="assets/images/red5.gif">';
+    var ATAT = '<img id="pic" src="assets/images/atat.gif">';
+    var Deathstar = '<img id="pic" src="assets/images/deathstarblow2.gif">';
+    var Ozzel = '<img id="pic" src="assets/images/ozzel.gif">';
+    var Cblock = '<img id="pic" src="assets/images/cellblock.gif">';
 
-    console.log(qcnt);
-    start(qcnt);
+    //image array
+    var questionImages = [vader, leiaOrgana, slave1, DL44, Kessel, Red5, ATAT, Deathstar, Ozzel, Cblock];
+ 
+    
+    $(".container").hide();
+    $("#yes").on("click", function () {
+        $(this).fadeOut(1000);
+        $(".container").show();
+        start(qcnt);
+    });
+
     $("#ans1, #ans2, #ans3, #ans4").on("click", function () {
         let userPick = $(this).attr("id");
         let ans = question[qcnt].answer;
-        console.log(qcnt);
         if (userPick == ans) {
-            alert("correct");
-            qcnt++;
-            imageResults();
-            
-        }else {
-            alert("wrong");
+            imageResults(qcnt);
+        } else {
+           imageResults(qcnt);
 
         }
     });
-    
+
     function start(i) {
         let quest = question[i].q1;
         let ans1 = question[i].a;
@@ -47,14 +50,23 @@ $(document).ready(function () {
         opt1.html("<p>A." + "  " + ans1 + "</p>");
         opt2.html("<p>B." + "  " + ans2 + "</p>");
         opt3.html("<p>C." + "  " + ans3 + "</p>");
-        opt4.html("<p>D." + "  " + ans4 + "</p>");  
+        opt4.html("<p>D. " + "  " + ans4 + "</p>");
+        
     }
-  //answer images
-  
-    function imageResults() {
-       $("#ans-image").hide();
-       $("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
-      // start(qcnt);
+    //answer images
+
+    function imageResults(qcnt) {
+      
+        $("#ans-image, #questionBox").hide();
+        $("#ok").append(questionImages[qcnt]).show();
+        setTimeout(showResults , 3500);
+    }
+
+    function showResults() {
+        $("#ans-image, #questionBox").show();
+        $("#ok").append(questionImages[qcnt]).empty();
+        qcnt++;
+        start(qcnt);
 
     }
 
@@ -63,4 +75,81 @@ $(document).ready(function () {
 
 
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //$("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
+        // start(qcnt);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});//documentready
