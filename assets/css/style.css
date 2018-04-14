@@ -1,10 +1,15 @@
-#q1 {
-    display: visible;
-    
+#body {
+    background-image:url("../images/starsbackground.jpg");
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 90;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+#q1 {
+    display: visible;   
+}
 #yes {
-
    width: 100%;
    height: 100vh;
    margin: 0px;
@@ -12,39 +17,57 @@
 #pic {
    width: 600px;
    height: 300px;
-   margin: 0 auto;
+   margin-left: 250px;
 }
-
-#body {
-    background-image:  url("../images/starsbackground.jpg");
-    width: 100%;
-    height: 100vh;
-    border: solid 2px rgb(253, 250, 34);
-    position: relative;
-    z-index: 90;
-}
-
 #swtrv {
     width: 1110px;
-    height: 200px;
+    height: 390px;
     margin-bottom: 60px;
     margin-top: 20px;
     align-self: center;
     border: dashed 4px rgb(253, 250, 34);
 }
-    
 #ans1, #ans2, #ans3, #ans4 {
     text-align: center;
     background-color: blue;
+    border: inset 8px rgb(253, 250, 34);  
 }
-
-div.container {
-    color: rgb(194, 13, 13);
+p.abc:hover, p.abc:active {
+    
+    background: red;
+}
+#ans-image{
+    color: rgb(97, 247, 52);
+    text-shadow: rgb(255, 255, 255) 1px 2px;
     font-size: 30px;
+    
 }
-
 #timer {
     background-color: black;
-    color:rgb(253, 250, 34);
-    margin-bottom: 10px;
+    color:rgb(97, 247, 52);
+    margin-bottom: 19px;
+    text-align: center;
+    font-size: 30px;
+    border: dashed 4px rgb(253, 250, 34);  
+}
+#answer{
+    color: green;
+    font-weight: 900;
+    text-align: center;
+    background-color: black;
+    font-size: 50px;
+}
+.jumbotron {
+    color: rgb(97, 247, 52);
+    text-align: center;
+    text-shadow: rgb(0, 0, 0) 4px 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    background-image: url("../images/jumbotron.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -150px;
+    background-position-x: -590px;
+    letter-spacing: 2.5px;
+    border: dashed 4px rgb(253, 250, 34);   
 }

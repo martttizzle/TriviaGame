@@ -35,7 +35,7 @@ var question = [{
     answer: "ans1"
 },{
     q1: "What is the name of Luke Skywalkers X-wing?",
-    a: "Read Leader",
+    a: "Red Leader",
     b: "Red 2",
     c: "Red 5",
     d: "Red 0",
