@@ -38,8 +38,9 @@ p.abc:hover, p.abc:active {
 }
 #ans-image{
     color: rgb(97, 247, 52);
-    text-shadow: rgb(255, 255, 255) 1px 2px;
+    text-shadow: rgb(0, 0, 0) 1px 2px;
     font-size: 30px;
+     
     
 }
 #timer {
@@ -56,6 +57,7 @@ p.abc:hover, p.abc:active {
     text-align: center;
     background-color: black;
     font-size: 50px;
+    
 }
 .jumbotron {
     color: rgb(97, 247, 52);
@@ -70,4 +72,12 @@ p.abc:hover, p.abc:active {
     background-position-x: -590px;
     letter-spacing: 2.5px;
     border: dashed 4px rgb(253, 250, 34);   
+}
+
+#endAns {
+    color: (253, 250, 34);  
+    background-color: black;
+    width: 100%;
+    height: 500px;
+
 }

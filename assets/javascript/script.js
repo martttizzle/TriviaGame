@@ -65,7 +65,8 @@ $(document).ready(function () {
     if(i == 10) {
         clearInterval(intervalID);
         $("#ans-image, #questionBox").hide();
-        $("#ok").append("<p id='answer'>" +"WRONG "+"<br>"+' correct answer: ' +wrongAnswer(qcnt) + "</p>").show();
+        $("#ok").append("<p id='endAns'>" + "</p>").show();
+        $("#ok").append("<button> RESET </button>").show();
      }
  
     }
