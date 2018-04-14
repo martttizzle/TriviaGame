@@ -24,11 +24,7 @@ $(document).ready(function () {
     var questionImages = [vader, leiaOrgana, slave1, DL44, Kessel, Red5, ATAT, Deathstar, Ozzel, Cblock];
     // array of wrong answers
     var wrongAnswerArry = [question[0].b,question[1].c,question[2].a,question[3].b,question[4].a,question[5].c,question[6].a,question[7].c,question[8].a,question[9].a];
-    console.log(qcnt);
-    if(qcnt > 1) {
-        alert("ok");
-     }
- 
+    
     
     //Click to start and timer start
     $(".container").hide();
@@ -65,12 +61,19 @@ $(document).ready(function () {
         opt2.html("<p>B. " + "  " + ans2 + "</p>");
         opt3.html("<p>C. " + "  " + ans3 + "</p>");
         opt4.html("<p>D. " + "  " + ans4 + "</p>");
+        console.log(i);
+    if(i == 10) {
+        clearInterval(intervalID);
+        $("#ans-image, #questionBox").hide();
+        $("#ok").append("<p id='answer'>" +"WRONG "+"<br>"+' correct answer: ' +wrongAnswer(qcnt) + "</p>").show();
+     }
+ 
     }
     //answer images
     function imageResults(qcnt,correct) {
         $("#ans-image, #questionBox").hide();
         $("#ok").append(questionImages[qcnt]).show();
-        setTimeout(showResults, 5000);
+        setTimeout(showResults, 1000);
         if (correct == true) {
         $("#answer").append("<p>CORRECT</p>").show();
         }else if(correct == false) {
