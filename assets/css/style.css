@@ -10,11 +10,9 @@
    margin: 0px;
 }
 #pic {
-
    width: 600px;
    height: 300px;
    margin: 0 auto;
-   
 }
 
 #body {
@@ -35,8 +33,6 @@
     border: dashed 4px rgb(253, 250, 34);
 }
     
- 
-
 #ans1, #ans2, #ans3, #ans4 {
     text-align: center;
     background-color: blue;
@@ -45,10 +41,10 @@
 div.container {
     color: rgb(194, 13, 13);
     font-size: 30px;
-
 }
 
-.timer{
+#timer {
     background-color: black;
     color:rgb(253, 250, 34);
+    margin-bottom: 10px;
 }

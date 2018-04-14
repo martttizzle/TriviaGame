@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     var qDiv = $("#questionBox");
     var opt1 = $("#ans1");
@@ -5,7 +7,10 @@ $(document).ready(function () {
     var opt3 = $("#ans3");
     var opt4 = $("#ans4");
     var qcnt = 0;
+    var counter = 0;
+    var timeleft = 21;
     var intervalID;
+    var wrong = "wrong";
     var vader = '<img id="pic" src="assets/images/vader.gif">';
     var leiaOrgana = '<img id="pic" src="assets/images/leiaOrgana.gif">';
     var slave1 = '<img id="pic" src="assets/images/slave1.gif">';
@@ -19,27 +24,29 @@ $(document).ready(function () {
 
     //image array
     var questionImages = [vader, leiaOrgana, slave1, DL44, Kessel, Red5, ATAT, Deathstar, Ozzel, Cblock];
- 
-    
+
     $(".container").hide();
     $("#yes").on("click", function () {
         $(this).fadeOut(1000);
         $(".container").show();
-        start(qcnt);
+        questions(qcnt);
+        setup();
     });
-
     $("#ans1, #ans2, #ans3, #ans4").on("click", function () {
         let userPick = $(this).attr("id");
         let ans = question[qcnt].answer;
         if (userPick == ans) {
+            clearInterval(intervalID);
             imageResults(qcnt);
-        } else {
-           imageResults(qcnt);
 
+
+        } else {
+            clearInterval(intervalID);
+            imageResults(qcnt);
+            wrongAnswer()
         }
     });
-
-    function start(i) {
+    function questions(i) {
         let quest = question[i].q1;
         let ans1 = question[i].a;
         let ans2 = question[i].b;
@@ -51,105 +58,55 @@ $(document).ready(function () {
         opt2.html("<p>B." + "  " + ans2 + "</p>");
         opt3.html("<p>C." + "  " + ans3 + "</p>");
         opt4.html("<p>D. " + "  " + ans4 + "</p>");
-        
     }
     //answer images
-
     function imageResults(qcnt) {
-      
         $("#ans-image, #questionBox").hide();
         $("#ok").append(questionImages[qcnt]).show();
-        setTimeout(showResults , 3500);
+        setTimeout(showResults, 5000);
     }
-
+    //display answers
     function showResults() {
         $("#ans-image, #questionBox").show();
         $("#ok").append(questionImages[qcnt]).empty();
         qcnt++;
-        start(qcnt);
-
+        questions(qcnt);
+        intervalID = setInterval(timeIt, 1000);
+        reset();
     }
 
+    //Count down timer
+
+    function setup() {
+        var timer = $("#timer");
+        timer.html("<b>0</b>");
+        intervalID = setInterval(timeIt, 1000);
+    }
+    function timeIt() {
+        counter++;
+        let countdown = (timeleft - counter);
+        $("#timer").html("<b>" + "Time Remaining: " + countdown + " seconds " + "</b>");
+        if (countdown == 0) {
+            imageResults(qcnt);
+            clearInterval(intervalID);
+            
+        }
+        
+        console.log(counter);
+    }
+    function reset() {
+        counter = 0;
+        
+    }
+    function wrongAnswer() {
+        ("#timer").text("Yes");
+    }
+
+});
+       //documentready
+//$("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
+// questions(qcnt);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //$("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
-        // start(qcnt);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});//documentready
