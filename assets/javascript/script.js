@@ -9,7 +9,7 @@ $(document).ready(function () {
     var wrgResults = 0;
     var noAnswer = 0;
     var counter = 0;
-    var timeleft = 55;
+    var timeleft = 21;
     var intervalID;
     var correct;
     var vader = '<img id="pic" class="col-xs-6" src="assets/images/vader.gif">';
@@ -66,12 +66,12 @@ $(document).ready(function () {
         opt2.html("<p>B. " + "  " + ans2 + "</p>");
         opt3.html("<p>C. " + "  " + ans3 + "</p>");
         opt4.html("<p>D. " + "  " + ans4 + "</p>");
-
+        //Creates the score screen with button to reset, but couldn't get button to work in-line to call function
         if (i == 10) {
             clearInterval(intervalID);
             $("#ans-image, #questionBox").hide();
             $("#ok").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
-                crtResults + "<br>" + "Wrong Answers:" + wrgResults +"<br>"+"No Answer:"+ noAnswer +"</p>").show();
+                crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").show();
             $("#ok").prepend("<button id='button' onclick='startOver()'>" + "START OVER?" + "</button>").show();
 
         }
@@ -81,12 +81,12 @@ $(document).ready(function () {
     function imageResults(qcnt, correct) {
         $("#ans-image, #questionBox").hide();
         $("#ok").append(questionImages[qcnt]).show();
-        setTimeout(showResults, 100);
+        setTimeout(showResults, 5000);
         if (correct == true) {
             $("#answer").append("<p>CORRECT</p>").show();
         } else if (correct == false) {
-            $("#answer").append("<p id='answer'>" + "WRONG " + "<br>" + ' correct answer: ' + 
-            wrongAnswer(qcnt) + "</p>").show();
+            $("#answer").append("<p id='answer'>" + "WRONG " + "<br>" + ' correct answer: ' +
+                wrongAnswer(qcnt) + "</p>").show();
         }
     }
     //display answers
@@ -111,31 +111,33 @@ $(document).ready(function () {
         $("#timer").html("<b>" + "Time Remaining: " + countdown + " seconds " + "</b>");
         if (countdown == 0) {
             correct = false;
-            noAnswer += 1; 
-            imageResults(qcnt , false);
+            noAnswer += 1;
+            imageResults(qcnt, false);
             clearInterval(intervalID);
-        }
+          }
     }
     //Display the correct answer after wrong selection
     function wrongAnswer(qcnt) {
         var abc = wrongAnswerArry[qcnt];
         return abc;
-    }
+    }//RESET COUNTER
     function reset() {
         counter = 0;
         correct = true;
     }
 
-    function startOver() {
-
-    alert("yellow");
-
+    function backgroundChange() {
+        $("body")
     }
+    //I was trying to make the button call this function when clicked on as an in-line call
+    //but it wouldn't mak a call, no matter how I tried with it. 
+    // function startOver() {
+    //     alert("yellow");
+    //     /*This what I wanted to execute
+    //     /*qcnt = 0;
+    //     question(qcnt); This would reset the questions to 0, but i need to test to make sure it works
+    //    
+    // }
 });
-       //documentready
-//$("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
-// questions(qcnt);
-
-
 
 
