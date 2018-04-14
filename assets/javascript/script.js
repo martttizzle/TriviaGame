@@ -5,9 +5,11 @@ $(document).ready(function () {
     var opt3 = $("#ans3");
     var opt4 = $("#ans4");
     var qcnt = 0;
-    console.log(qcnt);
+    var crtResults = 0;
+    var wrgResults = 0;
+    var noAnswer = 0;
     var counter = 0;
-    var timeleft = 21;
+    var timeleft = 55;
     var intervalID;
     var correct;
     var vader = '<img id="pic" class="col-xs-6" src="assets/images/vader.gif">';
@@ -23,9 +25,9 @@ $(document).ready(function () {
     //image array
     var questionImages = [vader, leiaOrgana, slave1, DL44, Kessel, Red5, ATAT, Deathstar, Ozzel, Cblock];
     // array of wrong answers
-    var wrongAnswerArry = [question[0].b,question[1].c,question[2].a,question[3].b,question[4].a,question[5].c,question[6].a,question[7].c,question[8].a,question[9].a];
-    
-    
+    var wrongAnswerArry = [question[0].b, question[1].c, question[2].a, question[3].b, question[4].a, question[5].c, question[6].a, question[7].c, question[8].a, question[9].a];
+
+
     //Click to start and timer start
     $(".container").hide();
     $("#yes").on("click", function () {
@@ -42,11 +44,14 @@ $(document).ready(function () {
             correct = true;
             clearInterval(intervalID);
             imageResults(qcnt, correct);
+            crtResults += 1;
+
         } else {
             correct = false;
             clearInterval(intervalID);
             imageResults(qcnt, correct);
             wrongAnswer(qcnt);
+            wrgResults += 1;
         }
     });
     //questions generated
@@ -61,31 +66,34 @@ $(document).ready(function () {
         opt2.html("<p>B. " + "  " + ans2 + "</p>");
         opt3.html("<p>C. " + "  " + ans3 + "</p>");
         opt4.html("<p>D. " + "  " + ans4 + "</p>");
-        console.log(i);
-    if(i == 10) {
-        clearInterval(intervalID);
-        $("#ans-image, #questionBox").hide();
-        $("#ok").append("<p id='endAns'>" + "</p>").show();
-        $("#ok").append("<button> RESET </button>").show();
-     }
- 
+
+        if (i == 10) {
+            clearInterval(intervalID);
+            $("#ans-image, #questionBox").hide();
+            $("#ok").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
+                crtResults + "<br>" + "Wrong Answers:" + wrgResults +"<br>"+"No Answer:"+ noAnswer +"</p>").show();
+            $("#ok").prepend("<button id='button' onclick='startOver()'>" + "START OVER?" + "</button>").show();
+
+        }
+
     }
     //answer images
-    function imageResults(qcnt,correct) {
+    function imageResults(qcnt, correct) {
         $("#ans-image, #questionBox").hide();
         $("#ok").append(questionImages[qcnt]).show();
-        setTimeout(showResults, 1000);
+        setTimeout(showResults, 100);
         if (correct == true) {
-        $("#answer").append("<p>CORRECT</p>").show();
-        }else if(correct == false) {
-        $("#answer").append("<p id='answer'>" +"WRONG "+"<br>"+' correct answer: ' +wrongAnswer(qcnt) + "</p>").show();
+            $("#answer").append("<p>CORRECT</p>").show();
+        } else if (correct == false) {
+            $("#answer").append("<p id='answer'>" + "WRONG " + "<br>" + ' correct answer: ' + 
+            wrongAnswer(qcnt) + "</p>").show();
         }
     }
     //display answers
     function showResults() {
         $("#ans-image, #questionBox").show();
         $("#ok").append(questionImages[qcnt]).empty();
-        $("#answer").append("<p>"+ +"</p>").empty();
+        $("#answer").append("<p>" + +"</p>").empty();
         qcnt++;
         questions(qcnt);
         intervalID = setInterval(timeIt, 1000);
@@ -102,22 +110,27 @@ $(document).ready(function () {
         let countdown = (timeleft - counter);
         $("#timer").html("<b>" + "Time Remaining: " + countdown + " seconds " + "</b>");
         if (countdown == 0) {
-            imageResults(qcnt);
-            clearInterval(intervalID);  
-        }     
-     }
-  //Display the corrent answer after wrong selection
+            correct = false;
+            noAnswer += 1; 
+            imageResults(qcnt , false);
+            clearInterval(intervalID);
+        }
+    }
+    //Display the correct answer after wrong selection
     function wrongAnswer(qcnt) {
-      var abc =  wrongAnswerArry[qcnt];
-            return abc;
+        var abc = wrongAnswerArry[qcnt];
+        return abc;
     }
     function reset() {
         counter = 0;
-        correct = true;   
+        correct = true;
     }
 
-  
+    function startOver() {
 
+    alert("yellow");
+
+    }
 });
        //documentready
 //$("#ok").append('<img id="yes" src="assets/images/vader.jpg">');
