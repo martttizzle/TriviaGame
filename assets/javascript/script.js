@@ -1,17 +1,21 @@
 $(document).ready(function () {
+
     var qDiv = $("#questionBox");
     var opt1 = $("#ans1");
     var opt2 = $("#ans2");
     var opt3 = $("#ans3");
     var opt4 = $("#ans4");
-    var qcnt = 0;
-    var crtResults = 0;
-    var wrgResults = 0;
-    var noAnswer = 0;
+    var qcnt = 0;//question counter
+    var crtResults = 0; //for endslide correct count
+    var wrgResults = 0; // for endslide wrong count
+    var noAnswer = 0; // for endslide no answer count
     var counter = 0;
-    var timeleft = 21;
+    var timeleft = 11;
     var intervalID;
     var correct;
+    var button;
+    var bkgrdImg = "../images/deathstar.jpg";
+    //right or wrong answer gifs
     var vader = '<img id="pic" class="col-xs-6" src="assets/images/vader.gif">';
     var leiaOrgana = '<img id="pic" src="assets/images/leiaOrgana.gif">';
     var slave1 = '<img id="pic" src="assets/images/slave1.gif">';
@@ -30,8 +34,9 @@ $(document).ready(function () {
 
     //Click to start and timer start
     $(".container").hide();
-    $("#yes").on("click", function () {
-        $(this).fadeOut(500);
+    $("#strBtn").on("click", function () {
+        $(this).hide();
+        $("#yes").fadeOut(500);
         $(".container").show();
         questions(qcnt);
         setup();
@@ -42,13 +47,10 @@ $(document).ready(function () {
         let ans = question[qcnt].answer;
         if (userPick == ans) {
             correct = true;
-            clearInterval(intervalID);
             imageResults(qcnt, correct);
             crtResults += 1;
-
         } else {
             correct = false;
-            clearInterval(intervalID);
             imageResults(qcnt, correct);
             wrongAnswer(qcnt);
             wrgResults += 1;
@@ -67,21 +69,14 @@ $(document).ready(function () {
         opt3.html("<p>C. " + "  " + ans3 + "</p>");
         opt4.html("<p>D. " + "  " + ans4 + "</p>");
         //Creates the score screen with button to reset, but couldn't get button to work in-line to call function
-        if (i == 10) {
-            clearInterval(intervalID);
-            $("#ans-image, #questionBox").hide();
-            $("#ok").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
-                crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").show();
-            $("#ok").prepend("<button id='button' onclick='startOver()'>" + "START OVER?" + "</button>").show();
-
-        }
+        gameoverSlide(i);
 
     }
     //answer images
     function imageResults(qcnt, correct) {
         $("#ans-image, #questionBox").hide();
         $("#ok").append(questionImages[qcnt]).show();
-        setTimeout(showResults, 5000);
+        setTimeout(showResults, 1000);
         if (correct == true) {
             $("#answer").append("<p>CORRECT</p>").show();
         } else if (correct == false) {
@@ -93,7 +88,7 @@ $(document).ready(function () {
     function showResults() {
         $("#ans-image, #questionBox").show();
         $("#ok").append(questionImages[qcnt]).empty();
-        $("#answer").append("<p>" + +"</p>").empty();
+        $("#answer").append("<p>" + "</p>").empty();
         qcnt++;
         questions(qcnt);
         intervalID = setInterval(timeIt, 1000);
@@ -106,6 +101,7 @@ $(document).ready(function () {
         intervalID = setInterval(timeIt, 1000);
     }
     function timeIt() {
+
         counter++;
         let countdown = (timeleft - counter);
         $("#timer").html("<b>" + "Time Remaining: " + countdown + " seconds " + "</b>");
@@ -113,8 +109,8 @@ $(document).ready(function () {
             correct = false;
             noAnswer += 1;
             imageResults(qcnt, false);
-            clearInterval(intervalID);
-          }
+            
+        }
     }
     //Display the correct answer after wrong selection
     function wrongAnswer(qcnt) {
@@ -124,20 +120,32 @@ $(document).ready(function () {
     function reset() {
         counter = 0;
         correct = true;
+        backgroundChange();
     }
 
     function backgroundChange() {
-        $("body")
+        $("#body").css('background-image', 'url("' + bkgrdImg + '")');
     }
     //I was trying to make the button call this function when clicked on as an in-line call
     //but it wouldn't mak a call, no matter how I tried with it. 
-    // function startOver() {
-    //     alert("yellow");
-    //     /*This what I wanted to execute
-    //     /*qcnt = 0;
-    //     question(qcnt); This would reset the questions to 0, but i need to test to make sure it works
-    //    
-    // }
+    function gameoverSlide(i) {
+        if (i == 10) {
+      
+            $("#ans-image, #questionBox").hide();
+            $("#ok").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
+                crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").show();
+            button = $("#ok").prepend("<button id='button'>" + "START OVER?" + "</button>").show();
+            $(button).on("click", function () {
+                crtResults = 0;
+                wrgResults = 0;
+                noAnswer = 0;
+                qcnt = 0;
+                clearInterval(intervalID);
+                imageResults(qcnt);
+            });
+        }
+    }
+
 });
 
 
