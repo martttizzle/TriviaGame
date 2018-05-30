@@ -1,15 +1,17 @@
 #body {
-    background-image:url();
+    background-image: url();
+    background-size: cover;
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height: 100vh;  
     z-index: 90;
     font-family: Verdana,Tahoma, sans-serif;
 }
+
 #yes {
    width: 100%;
    height: 100vh;
    margin: 0px;
+  
 }
 #pic {
    width: 600px;
@@ -23,6 +25,7 @@
     margin-top: 10px;
     align-self: center;
     border: dashed 4px rgb(253, 250, 34);
+    opacity: 0.7;
 }
 #ans1, #ans2, #ans3, #ans4 {
     text-align: center;
@@ -40,14 +43,16 @@
     margin-bottom: 10px;
     text-align: center;
     font-size: 25px;
-    border: dashed 4px rgba(253, 249, 34, 0.842);  
+    border: dashed 3px rgba(253, 249, 34, 0.842);  
 }
-#answer{
+#answer p{
     color: green;
     font-weight: 900;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.712);
     font-size: 35px;
+    border: dashed 3px rgba(253, 249, 34, 0.842); 
+  
 }
 .jumbotron {
     color: rgb(98, 247, 52);
@@ -55,14 +60,12 @@
     text-shadow: rgb(0, 0, 0) 4px 2px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-weight: 900;
-    font-size: 30px;
-    background-image: url("../images/jumbotron.jpg");
-    opacity: 0.842;
+    font-size: 40px;
+    background-image: url();
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position-y: -150px;
-    background-position-x: -590px;
     letter-spacing: 2px;
-    border: dashed 4px rgba(253, 249, 34, 0.842); 
+    border: dashed 3px rgba(253, 249, 34, 0.842); 
     height: 170px; 
     margin-top: 0px; 
 }
@@ -73,7 +76,7 @@
     height: 400px;
     font-size:60px;
     text-align: center;
-    border: dashed 4px rgba(253, 249, 34, 0.842); 
+    border: dashed 3px rgba(253, 249, 34, 0.842); 
 }
 #button {
     width: 1110px;
@@ -84,7 +87,56 @@
     font-size: 20px;
 }
 #strBtn {
+    display: none;
     position: absolute;
-    left:500px;
-    top: 500px;
+    margin: auto 0;
+    top: 270px;
+    left: 510px;
+    background-image: url("../images/lightsaberjpg.jpg");
+    background-size: cover;
+    background-position-y: 70%;
+    opacity: .842;
+    cursor: pointer;
+    height: 10%;
+    width: 30%;
+    border-radius: 50px;
+    border: dashed 3px rgba(253, 249, 34, 0.842);
+    color:  rgba(253, 249, 34);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px black;
 }
+#strBtn:hover {
+    background-image: url("../images/deathstar.jpg");  
+}
+.windows .machine {
+    margin-top: -200px;
+  }
+  
+  .victory {
+    position: absolute;
+    top: 520px;
+    left: 480px;
+    font-family: 'Permanent Marker', cursive;
+    font-variant:small-caps;
+    font-size: 100px;
+    -webkit-transform: skew(-15deg,-15deg);
+    padding-left: 80px;
+    background-image: -webkit-linear-gradient(#f3f2bd 0%,  rgb(255, 255, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    -webkit-filter: drop-shadow(2px 2px 20px #eeeb2f);
+    display: none;
+  }
+  
+ 
+  .victory-v {
+    position: relative;
+    background-image: -webkit-linear-gradient(#f3f2bd 0%,  rgb(255, 255, 0) 100%);
+    -webkit-background-clip: text;
+    padding-right: 18px;
+    margin-right: -18px;
+  }
+ 
+ 
