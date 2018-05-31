@@ -114,7 +114,7 @@ $(document).ready(function () {
     function showResults() {
         clearInterval(intervalID);
         $("#ans-image, #questionBox").show();
-        $("#ok, #answer").empty();
+        $("#ok,#answer").empty();
         qcnt++
         timeLeft = 12;
         $("#timer").html("<p class='col-xl-12'<b style='col-sm-12 p'>" + "Time Remaining: " + timeLeft + " Seconds " + "</b></p>");
@@ -152,11 +152,8 @@ $(document).ready(function () {
             $("#ans-image, #questionBox").show();
             timeLeft = 10;
             start(qcnt);
-
         });
-
     }
-
 });
 
 

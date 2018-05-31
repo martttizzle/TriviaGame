@@ -64,7 +64,7 @@
     text-align: center;
     text-shadow: rgb(0, 0, 0) 4px 2px 2px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 30px;
     background-image: url();
     background-size: 100% 100%;
@@ -119,6 +119,12 @@
     z-index: 1000;
 }
 
+@media only screen and (max-width: 950px) {
+    #strBtn {
+          font-size: 10px;
+          font-weight: normal;
+      }
+  }
 #strBtn:hover {
     background-size: cover;
     background-image: url("../images/deathstar.jpg");  
@@ -138,3 +144,5 @@
     color:red;
     text-shadow: black 2px 2px 3px;
 }
+
+ 
