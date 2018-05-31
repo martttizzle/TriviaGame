@@ -13,62 +13,75 @@
         crossorigin="anonymous">
 </head>
 
- 
+
 <body id="body">
     <!-- Starting image -->
-    <h1 class="victory col-xs-12"><span class="victory-v col-xs-12">T</span>rivia</h1> 
+     <div class="row">
+        <div id="wrapper">  
+                <img id="yes" class="col-xl-12" src="assets/images/star-wars.jpg">
+            <button id="strBtn" class="col-xl-6 " type="button">CLICK TO START TRIVIA GAME</button>       
+        </div>
+    </div>
     
-    <img id="yes" class="col-xs-12" src="assets/images/star-wars.jpg">
+      
+       
 
-    <button id="strBtn" class="col-xs-12" type="button">Click to Start</button>
         
+
+
+    <div class="hide1">
     <div class="container">
 
         <div class="row">
-           
+
         </div>
         <div class="row">
-        <div id="questionBox" class="col-sm-12 jumbotron"></div>
+            <div id="questionBox" class="col-sm-12 jumbotron"></div>
         </div>
+
+
         <div class="row">
-            <div id="timer" class="col-sm-12"> </div>
+            <div id="timer" class="col-xl-12"> </div>
         </div>
+
+
         <div class="row">
             <!-- GIF  -->
-            <div id="ok" class="col-xs-12"></div>
-            <div id="bttn" class="col-xs-12"></div>
-            <div id="results" class="col-xs-12"></div>
+            <div id="answer" class="col-xl-12"></div>
+            <div id="ok" class="col-xl-12"></div>
+            <div id="bttn" class="col-xl-12"></div>
+            <div id="results" class="col-xl-12"></div>
+                
         </div>
 
         <!-- Answer Image -->
         <div id="ans-image">
             <div class="row">
-                <div class="col-xl">
-                    <p id="ans1" class="abc"> </p>
+                <div class="col-xl-12">
+                    <p id="ans1" class="col-xl-12"> </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl">
+                <div class="col-xl-12">
                     <p id="ans2"> </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl">
+                <div class="col-xl-12">
                     <p id="ans3"> </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl">
+                <div class="col-xl-12">
                     <p id="ans4"> </p>
                 </div>
             </div>
-        </div>
+</div>
         <!--Right or Wrong answer appears with text -->
-        <div id="answer" class="col-xs-12">
-        </div>
+        
+    </div>
     </div>
 
- 
 
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

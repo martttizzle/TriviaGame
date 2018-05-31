@@ -18,16 +18,14 @@ $(document).ready(function () {
     //Click to start and timer start
 
     
-    $("#strBtn").fadeIn(5000);
-    $(".victory").fadeIn(2500);
-    // $("#strBtn").fadeOut(5000);
-    $(".container").hide();
+    $("#strBtn").fadeIn(7000);
+    $(".hide1").hide();
     $("#strBtn").on("click", function () {
         $(this).hide();
         $(".victory").hide();
-        $("#yes").fadeOut(500);
-        $(".container").show();
-        $("#timer").html("<b>" + "Time Remaining: " + timeLeft + " Seconds " + "</b>");
+        $("#yes").fadeOut(200);
+        $(".hide1").show();
+        $("#timer").html("<p class='col-xl-12 p'<b>" + "Time Remaining: " + timeLeft + " Seconds " + "</b></p>");
         start(qcnt);
     });
 
@@ -47,10 +45,10 @@ $(document).ready(function () {
     function timeIt(timeLeft) {
     intervalID = setInterval(function() { 
         if (timeLeft > 1) {
-            $("#timer").html("<b>" + "Time Remaining: " + timeLeft + " Seconds " + "</b>");
+            $("#timer").html("<p class='col-xl-12 p'<b>" + "Time Remaining: " + timeLeft + " Seconds " + "</b></p>");
         }
         else {
-            $("#timer").html("<b>" + "Time Remaining: " + timeLeft + " Second " + "</b>");
+            $("#timer").html("<p class='col-xl-12 p'<b>" + "Time Remaining: " + timeLeft + " Second " + "</b></p>");
         }
 
         timeLeft--;
@@ -70,10 +68,10 @@ $(document).ready(function () {
         let ans3 = question[i].c;
         let ans4 = question[i].d;
         qDiv.html("<p class='col-sm-12 PP'>" + quest + "</p>");
-        opt1.html("<p class='col-sm-12 p'>A. " + "  " + ans1 + "</p>");
-        opt2.html("<p class='col-sm-12 p'>B. " + "  " + ans2 + "</p>");
-        opt3.html("<p class='col-sm-12 p'>C. " + "  " + ans3 + "</p>");
-        opt4.html("<p class='col-sm-12 p'>D. " + "  " + ans4 + "</p>");    
+        opt1.html("<p class='col-sm-12 p'>" +  ans1 + "</p>");
+        opt2.html("<p class='col-sm-12 p'>" +  ans2 + "</p>");
+        opt3.html("<p class='col-sm-12 p'>" +  ans3 + "</p>");
+        opt4.html("<p class='col-sm-12 p'>" +  ans4 + "</p>");    
 }
 
     //answer clicked
@@ -105,7 +103,7 @@ $(document).ready(function () {
             $("#answer").append("<p class='col-xs-12' id='answer'>CORRECT!</p>").show();
         }
         else if (correct == false) {
-            $("#answer").append("<p class='col-xs-12' id='answer'>" + "WRONG! " + "<br>" + ' correct answer: ' +
+            $("#answer").append("<p class='col-xs-12' id='answer'>" + "<span id='wrg'>WRONG !!!</span> " + "<br>" + 'Correct Answer: ' +
             wrongAnswer(qcnt) + "</p>").show();
         } 
            //Gif display length 
@@ -118,8 +116,8 @@ $(document).ready(function () {
         $("#ans-image, #questionBox").show();
         $("#ok, #answer").empty();
         qcnt++
-        timeLeft = 10;
-        $("#timer").html("<b style='col-sm-12'>" + "Time Remaining: " + timeLeft + " Seconds " + "</b>");
+        timeLeft = 12;
+        $("#timer").html("<p class='col-xl-12'<b style='col-sm-12 p'>" + "Time Remaining: " + timeLeft + " Seconds " + "</b></p>");
         start(qcnt); 
     }
 
@@ -136,7 +134,7 @@ $(document).ready(function () {
     function gameoverSlide() {
         clearInterval(intervalID);
         $("#ans-image, #questionBox, #ok").hide();
-        $("#results").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
+        $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
             crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").show();
         button = $("#bttn").prepend("<button id='button'>" + "START OVER?" + "</button>").show();
 
@@ -146,7 +144,7 @@ $(document).ready(function () {
             wrgResults = 0;
             noAnswer = 0;
             qcnt = 0;
-            $("#results").append("<p id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
+            $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
             crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").empty();
 
             button = $("#bttn").prepend("<button id='button'>" + "START OVER?" + "</button>").empty();
