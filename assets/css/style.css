@@ -123,6 +123,7 @@
     #strBtn {
           font-size: 10px;
           font-weight: normal;
+          color:rgba(253, 249, 34);
       }
   }
 #strBtn:hover {
