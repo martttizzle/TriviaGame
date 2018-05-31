@@ -52,6 +52,7 @@ $(document).ready(function () {
         else {
             $("#timer").html("<b>" + "Time Remaining: " + timeLeft + " Second " + "</b>");
         }
+
         timeLeft--;
 
         if (timeLeft < 0) {
@@ -63,17 +64,16 @@ $(document).ready(function () {
 }
     //questions generated
     function questions(i) {
-        console.log(i,"the question reset");
         let quest = question[i].q1;
         let ans1 = question[i].a;
         let ans2 = question[i].b;
         let ans3 = question[i].c;
         let ans4 = question[i].d;
-        qDiv.html("<p>" + quest + "</p>");
-        opt1.html("<p>A. " + "  " + ans1 + "</p>");
-        opt2.html("<p>B. " + "  " + ans2 + "</p>");
-        opt3.html("<p>C. " + "  " + ans3 + "</p>");
-        opt4.html("<p>D. " + "  " + ans4 + "</p>");    
+        qDiv.html("<p class='col-sm-12 PP'>" + quest + "</p>");
+        opt1.html("<p class='col-sm-12 p'>A. " + "  " + ans1 + "</p>");
+        opt2.html("<p class='col-sm-12 p'>B. " + "  " + ans2 + "</p>");
+        opt3.html("<p class='col-sm-12 p'>C. " + "  " + ans3 + "</p>");
+        opt4.html("<p class='col-sm-12 p'>D. " + "  " + ans4 + "</p>");    
 }
 
     //answer clicked
@@ -102,10 +102,10 @@ $(document).ready(function () {
         $("#ok").append(gifClip[qcnt]).show();
             //Conditional statements allow the right or wrong text to be displayed
         if (correct == true) {
-            $("#answer").append("<p id='answer'>CORRECT!</p>").show();
+            $("#answer").append("<p class='col-xs-12' id='answer'>CORRECT!</p>").show();
         }
         else if (correct == false) {
-            $("#answer").append("<p id='answer'>" + "WRONG! " + "<br>" + ' correct answer: ' +
+            $("#answer").append("<p class='col-xs-12' id='answer'>" + "WRONG! " + "<br>" + ' correct answer: ' +
             wrongAnswer(qcnt) + "</p>").show();
         } 
            //Gif display length 
@@ -119,7 +119,7 @@ $(document).ready(function () {
         $("#ok, #answer").empty();
         qcnt++
         timeLeft = 10;
-        $("#timer").html("<b>" + "Time Remaining: " + timeLeft + " Seconds " + "</b>");
+        $("#timer").html("<b style='col-sm-12'>" + "Time Remaining: " + timeLeft + " Seconds " + "</b>");
         start(qcnt); 
     }
 
@@ -130,7 +130,7 @@ $(document).ready(function () {
  
     function backgroundChange(num) {
         $("#body,.jumbotron").css("background-image","url("+bkgrdImg[num]+")").fadeOut(0);
-        $("#body,.jumbotron").css("background-image","url("+bkgrdImg[num]+")").fadeIn(1500);
+        $("#body,.jumbotron").css("background-image","url("+bkgrdImg[num]+")").fadeIn(2000);
        
     }
     function gameoverSlide() {
