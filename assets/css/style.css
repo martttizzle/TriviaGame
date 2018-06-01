@@ -81,7 +81,7 @@
     font-size:30px;
     text-align: center;
     border: dashed 3px rgba(253, 249, 34, 0.842);
-    margin: 40px auto; 
+    margin: 60px auto; 
 }
 #button {
     background-color: rgba(0, 0, 0, 0.452);
@@ -91,7 +91,6 @@
     width: 100%;
     font-size: 20px;
     border: dashed 3px rgba(253, 249, 34, 0.842); 
-    border-radius: 30px;
     cursor: pointer;
 }
 
@@ -110,7 +109,6 @@
     background-size: cover;
     background-position-y: 70%;
     cursor: pointer;
-    border-radius: 50px;
     border: dashed 3px rgba(253, 249, 34, 0.842);
     color:  rgba(253, 249, 34);
     font-size: 20px;

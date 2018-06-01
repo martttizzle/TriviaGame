@@ -87,4 +87,4 @@ var gifClip = [vader, leiaOrgana, slave1, DL44, Kessel, Red5, ATAT, Deathstar, O
 // array of wrong answers
 var wrongAnswerArry = [question[0].b, question[1].c, question[2].a, question[3].b, question[4].a, question[5].c, question[6].a, question[7].c, question[8].a, question[9].a];
 //Background images
-var bkgrdImg = ["assets/images/lukejpg.jpg","assets/images/leiajpg.jpg","assets/images/slave1png.png","assets/images/hansolojpg.jpg","assets/images/milleneniumjpg.jpg","assets/images/red5jpg.jpg","assets/images/atatpng.png","assets/images/deathstar2jpeg.jpg","assets/images/vaderchokejpg.jpg","assets/images/detentionblockjpg.jpg",];
+var bkgrdImg = ["assets/images/lukejpg.jpg","assets/images/leiajpg.jpg","assets/images/slave1png.png","assets/images/hansolojpg.jpg","assets/images/milleneniumjpg.jpg","assets/images/red5jpg.jpg","assets/images/atatpng.png","assets/images/deathstar2jpeg.jpg","assets/images/vaderchokejpg.jpg","assets/images/detentionblockjpg.jpg","assets/images/finaljpg.jpg"];
