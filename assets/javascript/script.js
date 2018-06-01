@@ -127,8 +127,9 @@ $(document).ready(function () {
     function gameoverSlide() {
         clearInterval(intervalID);
         $("#ans-image, #questionBox, #ok").hide();
-        $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
-            crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").show();
+        $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "<span id='crtAns'>" + "Correct Answer:"+ "</span> " +
+            crtResults + "<br>" + "<span id='wrg'>"+ "Wrong Answers:" +"</span> " + wrgResults + "<br>" + "No Answer: " + noAnswer + "</p>").show();
+
         button = $("#bttn").prepend("<button id='button'>" + "START OVER?" + "</button>").show();
 
         $(button).on("click", function () {
@@ -137,6 +138,7 @@ $(document).ready(function () {
             wrgResults = 0;
             noAnswer = 0;
             qcnt = 0;
+
             $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
                 crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").empty();
 
