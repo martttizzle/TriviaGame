@@ -3,13 +3,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;  
+    height: 100%;  
     z-index: 90;
     font-family: Verdana,Tahoma, sans-serif;
 }
 .p {
-    padding: 0px;
-    margin: 10px;
+    margin: 5px;
 }
 #yes {
    width: 100%;
@@ -17,9 +16,12 @@
    margin: 0px;
 }
 #pic {
-   width: 100%;
-   height: 50%;
-   margin: 50px auto;
+   display: block;
+   width: fit-content;
+   height: fit-content;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px;
    border: dashed 3px rgb(253, 250, 34);
 }
 
@@ -123,7 +125,6 @@
 @media only screen and (max-width: 950px) {
     #strBtn {
           font-size: 10px;
-          font-weight: 300;
           color:rgba(253, 249, 34);
       }
   }
@@ -150,6 +151,11 @@
     color:green;
     text-shadow: black 2px 2px 3px;
     
+}
+
+#ok{
+padding: 0px;
+margin: 0px;
 }
 
  

@@ -15,7 +15,7 @@ $(document).ready(function () {
     var correct;
     var button;
 
-    //The Game stars
+    //The Game starts
     $("#strBtn").fadeIn(6000);
     $(".hide1").hide();
     $("#strBtn").on("click", function () {
@@ -75,7 +75,6 @@ $(document).ready(function () {
         clearInterval(intervalID);
         let userPick = $(this).attr("id");
         let ans = question[qcnt].answer;
-
         if (userPick == ans) {
             correct = true;
             crtResults += 1;
@@ -127,23 +126,20 @@ $(document).ready(function () {
     function gameoverSlide() {
         clearInterval(intervalID);
         $("#ans-image, #questionBox, #ok").hide();
-        $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "<span id='crtAns'>" + "Correct Answer:"+ "</span> " +
-            crtResults + "<br>" + "<span id='wrg'>"+ "Wrong Answers:" +"</span> " + wrgResults + "<br>" + "No Answer: " + noAnswer + "</p>").show();
-
+        $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "<span id='crtAns'>" + "Correct Answer:" + "</span> " +
+            crtResults + "<br>" + "<span id='wrg'>" + "Wrong Answers:" + "</span> " + wrgResults + "<br>" + "No Answer: " + noAnswer + "</p>").show();
+            //Creates the restart button
         button = $("#bttn").prepend("<button id='button'>" + "START OVER?" + "</button>").show();
-
+            //Execute button when clicked
         $(button).on("click", function () {
             clearInterval(intervalID);
             crtResults = 0;
             wrgResults = 0;
             noAnswer = 0;
             qcnt = 0;
-
             $("#results").append("<p class='col-xl' id='endAns'>" + "GAME OVER" + "<br>" + "Correct Answer:" +
                 crtResults + "<br>" + "Wrong Answers:" + wrgResults + "<br>" + "No Answer:" + noAnswer + "</p>").empty();
-
             button = $("#bttn").prepend("<button id='button'>" + "START OVER?" + "</button>").empty();
-
             $("#ans-image, #questionBox").show();
             timeLeft = 12;
             start(qcnt);
